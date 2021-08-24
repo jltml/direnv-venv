@@ -2,6 +2,8 @@
 
 ***venvs, but a little less annoying™***
 
+![direnv-venv preview](https://user-images.githubusercontent.com/8261330/130555236-6a44a196-1ccc-498d-a859-21563a1c17fd.gif)
+
 This is a super tiny shell script with a function that makes creating and using Python's venvs a little easier. Just run `venv` and you'll have a venv at `.venv` within your working directory, plus a `.envrc` file so that, thanks to the awesome [direnv](https://github.com/direnv/direnv), every time you `cd` into the directory your venv will automatically be activated. It's pretty snazzy, even if a very minor quality-of-life thing.
 
 # Installation
