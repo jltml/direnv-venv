@@ -27,7 +27,17 @@ venv() {
         printf 'added `unset PS1` to `.envrc`\n'
       fi
       direnv allow .
-      printf 'ok, everything should be good :)\n'
+      if command -v ./.venv/bin/python3 &> /dev/null; then
+        ./.venv/bin/python3 -m pip install --upgrade pip setuptools > /dev/null
+        if [[ $? == 0 ]]; then
+          printf 'upgraded pip and setuptools\n'
+        else
+          printf 'failed to update pip and/or setuptools!\n'
+        fi
+      else
+        printf 'pip and setuptools not upgraded \n'
+      fi
+      printf 'ok, everything should be good :)\n\n'
     else
       printf "direnv doesn't seem to exist; make sure it's installed :)\n"
     fi
